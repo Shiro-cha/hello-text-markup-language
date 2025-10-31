@@ -5,6 +5,7 @@ import { Header } from '../components/layouts/Header';
 import { NavItem } from '../components/navigation/NavItem';
 import { NavMenu } from '../components/navigation/NavMenu';
 import { UserProfile } from '../components/layouts/UserProfile';
+import { EmptyState } from '../components/ui/EmptyState';
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -49,21 +50,9 @@ export default function Dashboard() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header sidebarOpen={sidebarOpen} onMenuClick={() => setSidebarOpen(true)} />
 
-        {/* Main Area - Empty with placeholder */}
+
         <main className="flex-1 overflow-auto p-6">
-          <div className="h-full flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <BarChart3 size={48} className="text-gray-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                Your workspace is empty
-              </h3>
-              <p className="text-gray-500">
-                Start by creating your first project or importing existing data
-              </p>
-            </div>
-          </div>
+          <EmptyState icon={BarChart3} title="There is nothing to show here" description="Start doing something" />
         </main>
       </div>
     </div>
