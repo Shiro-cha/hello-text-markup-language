@@ -1,6 +1,7 @@
 'use client'
 import { useState, useCallback } from 'react';
-import { FileItem, uploadFile, saveFileToBackend, getFiles, deleteFile } from '@/lib/fileSystem';
+import { deleteFile, FileItem, getFiles, saveFileToBackend, uploadFile } from '../lib/fileSystem';
+
 
 export function useFileSystem() {
   const [files, setFiles] = useState<FileItem[]>([]);
