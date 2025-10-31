@@ -1,5 +1,7 @@
 'use client'
 
+import { useUser } from "@/app/hooks/useUser";
+
 
 export function UserProfile() {
   const { user } = useUser();

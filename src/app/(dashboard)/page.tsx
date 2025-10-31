@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Header } from '../components/layouts/Header';
 import { NavItem } from '../components/navigation/NavItem';
 import { NavMenu } from '../components/navigation/NavMenu';
+import { UserProfile } from '../components/layouts/UserProfile';
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -40,18 +41,7 @@ export default function Dashboard() {
             <NavMenu />
           </nav>
 
-          {/* User Profile */}
-          <div className="p-4 border-t border-gray-200">
-            <div className="flex items-center gap-3 px-4 py-3">
-              <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
-                JD
-              </div>
-              <div>
-                <p className="text-sm font-medium text-gray-800">John Doe</p>
-                <p className="text-xs text-gray-500">john@example.com</p>
-              </div>
-            </div>
-          </div>
+          <UserProfile />
         </div>
       </aside>
 
