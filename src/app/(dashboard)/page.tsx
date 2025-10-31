@@ -2,6 +2,8 @@
 import { Home, BarChart3, Users, Settings, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Header } from '../components/layouts/Header';
+import { NavItem } from '../components/navigation/NavItem';
+import { NavMenu } from '../components/navigation/NavMenu';
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -35,23 +37,7 @@ export default function Dashboard() {
 
           {/* Navigation */}
           <nav className="flex-1 p-4">
-            <ul className="space-y-2">
-              {menuItems.map((item, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                      item.active
-                        ? 'bg-blue-50 text-blue-600'
-                        : 'text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    <item.icon size={20} />
-                    <span className="font-medium">{item.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <NavMenu />
           </nav>
 
           {/* User Profile */}
